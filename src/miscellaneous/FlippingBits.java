@@ -69,7 +69,6 @@ public class FlippingBits {
         }
         
         System.out.println("twosComplement: " + twosComplement);
-
         return twosComplement;
     }
     

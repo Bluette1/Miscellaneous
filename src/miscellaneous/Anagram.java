@@ -30,7 +30,6 @@ public class Anagram {
 	public static int anagram(String str) {
 		int len = str.length();
 		if (len % 2 != 0) {
-			System.out.println("resCount: -1");
 			return -1;
 		}
 		int mid = len / 2;
@@ -46,9 +45,7 @@ public class Anagram {
 			if (diff >= 0) {
 				counts.add(diff);
 			} else if(counts.indexOf(Math.abs(diff)) >= 0) {
-				
-				counts.remove(counts.indexOf(Math.abs(diff)));
-				resCount += Math.abs(diff);
+				counts.set(counts.indexOf(Math.abs(diff)), Math.abs(diff));
 			}				
 				counted.add(curr);
 			}
@@ -57,9 +54,6 @@ public class Anagram {
 		for(int idx = 0; idx < counts.size(); idx += 1) {
 			resCount += counts.get(idx);
 		}
-
-		System.out.println("resCount: " + resCount);
-
 		return resCount;
 		}
 }

@@ -5,8 +5,11 @@ public class Fibonacci {
   public static void main(String[] args) {
     for(int i = 0; i < 10; i += 1) {
       // System.out.println(fibonacci(i));
-      System.out.println(dynamicFibonacci(i));  
+      // System.out.println(dynamicFibonacci(i));  
     }
+    // int N = 10;
+    int N = 100;
+    System.out.println(evenFibonacci(N)); 
   }
 
   public static int fibonacci(int n) {
@@ -34,5 +37,19 @@ public class Fibonacci {
       i += 1;
     }
     return curr;
+  }
+
+  public static int evenFibonacci(int N) {
+    int sum = 0;
+    int i = 0;
+    int fib = dynamicFibonacci(i);
+    while (fib <= N) {
+      if (fib % 2 == 0)  {
+        sum += fib;
+      }
+      i += 1;
+      fib = dynamicFibonacci(i);
+    }
+    return sum;
   }
 }

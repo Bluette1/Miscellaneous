@@ -41,14 +41,16 @@ public class Fibonacci {
 
   public static int evenFibonacci(int N) {
     int sum = 0;
-    int i = 0;
-    int fib = dynamicFibonacci(i);
+    int fib = 1;
+    int prev = 1;
+    
     while (fib <= N) {
       if (fib % 2 == 0)  {
         sum += fib;
       }
-      i += 1;
-      fib = dynamicFibonacci(i);
+        int temp = prev;
+        prev = fib;
+        fib = temp + fib;
     }
     return sum;
   }

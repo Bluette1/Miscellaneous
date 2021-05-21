@@ -1,10 +1,10 @@
 public class PalindromeIndex {
   public static void main(String[] args) {
     // int res = palindromeIndex("awa");  
-    // int res = palindromeIndex("bcbc");
+    int res = palindromeIndex("bcbc");
     // int res = palindromeIndex("aaab");
     // int res = palindromeIndex("baa");
-    int res = palindromeIndex("aaa");
+    // int res = palindromeIndex("aaa");
     System.out.println(res);
   }
   /**
@@ -34,8 +34,8 @@ public class PalindromeIndex {
     }
 
     for (int i = 0; i <= j; i += 1) {
-      String str = string.substring(0, i) + string.substring(i + 1, j + 1);
-      String reversedStr = reversedString.substring(0, j - i) + reversedString.substring(j - i + 1, j + 1);
+      String str = string.substring(0, i) + string.substring(i + 1);
+      String reversedStr = reversedString.substring(0, j - i) + reversedString.substring(j - i + 1);
 
       if (str.equals(reversedStr)) {
         return i;

@@ -28,8 +28,7 @@ public class OddOccurrencesInArray {
       List<Integer> count = new ArrayList<>();
       for (int i = 0; i < array.length; i += 1) {
         if(count.contains(array[i])) {
-          Integer value = new Integer(array[i]);
-          count.remove(value);
+          count.remove((Integer) array[i]);
         } else {
           count.add(array[i]);
         }

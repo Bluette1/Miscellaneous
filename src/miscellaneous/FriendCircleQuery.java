@@ -47,6 +47,9 @@ public class FriendCircleQuery {
                 List row = store.get(rowIndexFirst);
                 count += row.size();
                 updateRow.addAll(row);
+                store.remove(rowIndexFirst); //remove this list
+                
+              
 
             } else {// just add the one friend
                 count++;
@@ -59,6 +62,7 @@ public class FriendCircleQuery {
                 List row = store.get(rowIndexSecond);
                 count += row.size();
                 updateRow.addAll(row);
+                store.remove(rowIndexSecond); //remove this lis
 //                    
             } else {// just add the one friend
                 count++;
@@ -72,8 +76,10 @@ public class FriendCircleQuery {
             } else {
                 resultArray[i] = max;
             }
-
-            store.add(updateRow); // update store
+            if (!updateRow.isEmpty()) {
+                store.add(updateRow); // update store
+            }
+            
             System.out.println(i + ": " + store.get(i));
         }
 

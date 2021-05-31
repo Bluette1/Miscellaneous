@@ -1,6 +1,5 @@
 package miscellaneous;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
  * OddOccurrencesInArray task.
  *
  * @author marylene
- * @see https://app.codility.com/demo/results/trainingH6EUW6-49D/
+ * @see https://app.codility.com/demo/results/trainingSVNJG7-4M4/
  * @since 12 August 2018
  */
 public class OddOccurrencesInArray {
@@ -24,7 +23,6 @@ public class OddOccurrencesInArray {
      * @return the unpaired element
      */
     public static int findUnpaired(int[] array) {
-      System.out.println("array" + Arrays.toString(array));
       List<Integer> count = new ArrayList<>();
       for (int i = 0; i < array.length; i += 1) {
         if(count.contains(array[i])) {
